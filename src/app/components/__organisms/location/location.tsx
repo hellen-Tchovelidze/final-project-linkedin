@@ -16,7 +16,7 @@ import Image from 'next/image';
 import { useStore } from '../../../store/store';
 
 const WorkExperience = () => {
-  const { isStudent, position, employmentType, experience } = useStore();
+  // const { isStudent, position, employmentType, experience } = useStore();
   const [location, setLocation] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();

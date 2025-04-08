@@ -113,7 +113,6 @@ export const useStore = create<Store>((set) => ({
   setLastName: (lastName) => set({ lastName }),
 
   setUser: (user) => set({ user }),  
-  
 }));
 
 
