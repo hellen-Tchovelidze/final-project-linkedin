@@ -20,6 +20,8 @@ const WorkExperience = () => {
   const [location, setLocation] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  
+
 
   useEffect(() => {
     
@@ -48,18 +50,19 @@ const WorkExperience = () => {
 
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-indigo-200 min-h-screen flex justify-center items-center p-6">
-      <div className="max-w-lg w-full bg-white rounded-xl shadow-lg p-8">
-        <Image
+    <div className="  flex flex-col min-h-screen justify-center items-center p-6 bg-[#F4F2EE]">
+       <Image
           src="/linkdeinicone.png"
           alt="LinkedIn Icon"
           width={150}
           height={150}
           className="mx-auto mb-4 cursor-pointer"
         />
-        <h1 className="text-3xl font-bold text-center mb-6">Complete Your Location</h1>
+        <h1 className="text-[32px]">Complete Your Location</h1>
+      <div  >
+       
         {error && <ErrorMessage message={error} />}
-        <div className="space-y-4">
+        <div className="p-7 bg-white w-[400px] h-[200px] flex flex-col gap-2 max-sm:w-[300px]">
           <LocationInput value={location} onChange={(e) => setLocation(e.target.value)} />
           <SaveButton onClick={handleLocationUpdate} />
         </div>

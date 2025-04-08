@@ -25,6 +25,7 @@ interface UserSearchProps {
 const UserSearch: React.FC<UserSearchProps> = ({ uid }) => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
+  
   const router = useRouter();
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const UserSearch: React.FC<UserSearchProps> = ({ uid }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-[300px] w-full h-[400px]">
+    <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-[300px] w-full   h-[400px]">
       {userData ? (
         <div className=' flex flex-col justify-center items-center'>
          

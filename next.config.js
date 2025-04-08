@@ -1,8 +1,8 @@
 // next.config.js
 module.exports = {
+    reactStrictMode: false, 
     eslint: {
-      // Turn off ESLint during build
-      ignoreDuringBuilds: true,
+      ignoreDuringBuilds: true, // იგნორირება eslint-ს build-ის დროს
     },
-  }
+  };
   

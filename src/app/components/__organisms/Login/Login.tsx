@@ -7,10 +7,16 @@ import { useAuthStore } from "../../../store/store";
 import { signUp, signInWithGoogle } from "../../../../firebase/auth";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Login() {
   const { email, password, error, setEmail, setPassword, setError } = useAuthStore();
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // კლივენტური მხარე
+  }, []);
 
   const handleJoinNow = () => {
     router.push("/register");

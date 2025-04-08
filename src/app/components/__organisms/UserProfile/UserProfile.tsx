@@ -15,6 +15,7 @@ const UserProfile: React.FC = () => {
   
   const [userData, setUserData] = useState<UserData | null>(null);
   const [experience, setExperience] = useState<string>('');
+  
 
   useEffect(() => {
     if (query.firstName && query.lastName && query.location) {

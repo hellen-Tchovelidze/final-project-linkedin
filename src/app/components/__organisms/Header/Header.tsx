@@ -38,6 +38,12 @@ const Header: React.FC<UserSearchProps> = ({ uid }) => {
   const [notificationsVisible, setNotificationsVisible] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // კლივენტური მხარე
+  }, []);
+
 
   const Avatar: React.FC<{ src?: string; alt?: string; size?: string }> = ({ src, alt = "Avatar", size = "w-24 h-24" }) => (
     <div className={`relative ${size} border-4 border-white rounded-full overflow-hidden`}>

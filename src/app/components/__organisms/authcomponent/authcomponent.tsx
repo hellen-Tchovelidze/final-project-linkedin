@@ -2,12 +2,13 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
 import { signInWithGoogle, registerWithEmail, loginWithEmail } from '../../../../firebase/auth';
 
 const AuthComponent = () => {
   const router = useRouter();
+  
 
   const handleGoogleSignIn = async () => {
     try {
@@ -24,7 +25,7 @@ const AuthComponent = () => {
   const handleMicrosoftSignIn = async () => {
     try {
 
-      router.push('/SuccessPage');
+      router.push('/login');
     } catch (error) {
       console.error('Error signing in with Microsoft: ', error);
     }

@@ -120,24 +120,7 @@ export const updateUserLocation = async (location: string) => {
 
 import {  addDoc  } from 'firebase/firestore';
 
-const sendMessage = async (senderId: string, receiverId: string, text: string) => {
-  if (!text.trim()) return;
 
-  const chatId = [senderId, receiverId].sort().join('_'); 
-  const messagesRef = collection(db, `chats/${chatId}/messages`);
-
-  try {
-    await addDoc(messagesRef, {
-      senderId,
-      receiverId,
-      text,
-      timestamp: serverTimestamp(),
-    });
-    console.log("✅ მესიჯი გაგზავნილია");
-  } catch (error) {
-    console.error("🔥 Firestore Error:", error);
-  }
-};
 
 
 

@@ -14,6 +14,12 @@ const SearchUsers = () => {
   const [users, setUsers] = useState<any[]>([]);
   const [error, setError] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // კლივენტური მხარე
+  }, []);
+
   const router = useRouter();
   const wrapperRef = useRef<HTMLDivElement>(null);
 

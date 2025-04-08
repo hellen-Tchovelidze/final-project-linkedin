@@ -2,7 +2,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Use `next/navigation` for routing in Next.js 13
 import { registerWithEmail, signInWithGoogle } from '../../../../firebase/auth';
 import InputField from '../../__atoms/InputField/InputField';
@@ -14,6 +14,12 @@ import Image from 'next/image';
 const RegisterComponent = () => {
   const { email, password, error, setError, clearError, setEmail, setPassword } = useStore();
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // კლივენტური მხარე
+  }, []);
+
 
   const handleGoogleSignIn = async () => {
     try {
@@ -76,8 +82,8 @@ const RegisterComponent = () => {
         height={700}
         className="max-w-[150px] max-h-[150px] cursor-pointer"
       />
-      <h1 className="text-[32px]">Make the most of your professional life</h1>
-      <div className="max-w-[400px] m-auto p-5 bg-white flex flex-col justify-between gap-2">
+      <h1 className="text-[32px] max-sm:text-[18px]">Make the most of your professional life</h1>
+      <div className="max-w-[400px] m-auto p-5 bg-white flex flex-col justify-between gap-2 max-sm:w-[300px]">
         <ErrorMessage message={error} />
 
         <div>

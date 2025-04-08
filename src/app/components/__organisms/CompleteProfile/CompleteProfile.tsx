@@ -3,7 +3,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth } from '../../../../firebase/firebase-config';
 import { updateProfile } from 'firebase/auth';
@@ -18,6 +18,7 @@ import Image from 'next/image';
 const CompleteProfile = () => {
   const { firstName, lastName, setFirstName, setLastName, setError, error } = useStore();
   const router = useRouter();
+ 
 
   const handleProfileUpdate = async () => {
     try {
@@ -58,8 +59,8 @@ const CompleteProfile = () => {
         className='max-w-[150px] max-h-[150px] cursor-pointer'
       />
       <div className='flex flex-col justify-center items-center'>
-        <h2 className='text-[32px] p-5'>Make the most of your professional life</h2>
-        <div className='w-[400px] m-auto p-5 bg-white'>
+        <h2 className='text-[32px] p-5 max-sm:text-[18px]'>Make the most of your professional life</h2>
+        <div className='w-[400px] m-auto p-5 bg-white max-md:w-[300px]'>
           {error && <ErrorMessage message={error} />}
           <ProfileForm
             firstName={firstName}

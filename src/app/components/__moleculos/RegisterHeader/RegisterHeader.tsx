@@ -16,7 +16,7 @@ function RegisterHeader() {
     };
     return (
         <>
-            <div className=' flex justify-evenly w-screen p-3 pb-[4%] items-center '>
+            <div className=' flex justify-around w-screen p-3 pb-[4%] items-center '>
 
                 <div>
 
@@ -25,12 +25,13 @@ function RegisterHeader() {
                         alt="linkdeinicone"
                         width={700}
                         height={700}
-                        className=' max-w-[150px] max-h-[150px] cursor-pointer'
+                        className=' max-w-[150px] max-h-[150px] cursor-pointer '
                     />
 
                 </div>
-
-                <div className=' flex justify-evenly w-[50%] items-center text-gray-600 cursor-pointer'>
+<div className=' flex w-[50%] justify-center items-center'>
+    
+<div className=' flex justify-evenly w-[50%] items-center text-gray-600 cursor-pointer max-lg:hidden'>
                     <div className='articles flex justify-center items-center flex-col'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 20 17" focusable="false" className="lazy-loaded" aria-busy="false">
                             <path d="m11 9.5h5v1h-5v-1zm5-5h-12v3h12v-3zm-5 8h5v-1h-5v1zm9-12v13c0 1.657-1.343 3-3 3h-14c-1.657 0-3-1.343-3-3v-13h20zm-2 2h-16v11c0 0.552 0.449 1 1 1h14c0.551 0 1-0.448 1-1v-11zm-9 7h-5v3h5v-3z" fill="currentColor" fillOpacity=".9"></path>
@@ -79,16 +80,20 @@ function RegisterHeader() {
 
                     <div className=' h-12 w-[1px] bg-black'></div>
 
-                    <button
+                    
+
+                </div>
+                <div className=' flex justify-center items-center gap-4'>
+                <button
                         onClick={handleJoinNow}
                         className="hover:text-[#004182] text-[#0a66c2] transition font-medium duration-200 hover:underline"
                     >
                         Join now
                     </button>
                     <LoginButton />
-
                 </div>
 
+</div>
             </div>
         </>
     )

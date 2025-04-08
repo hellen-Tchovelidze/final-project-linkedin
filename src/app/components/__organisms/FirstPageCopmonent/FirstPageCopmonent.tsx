@@ -9,7 +9,7 @@ function Componneddd() {
     <div>
       <RegisterHeader />
 
-      <div className=' flex w-screen justify-evenly items-center'>
+      <div className=' flex w-screen justify-evenly items-center max-lg:flex-col'>
 
         <AuthComponent />
 
@@ -18,7 +18,7 @@ function Componneddd() {
           alt="Copy Icon"
           width={700}
           height={700}
-          className=' max-w-[700px] max-h-[500px]'
+          className=' max-w-[700px] max-h-[500px] max-lg:w-[300px] max-sm:w-[200px]'
         />
 
       </div>
