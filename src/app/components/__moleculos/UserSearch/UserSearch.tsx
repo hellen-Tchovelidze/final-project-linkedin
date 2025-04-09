@@ -74,7 +74,7 @@ const UserSearch: React.FC<UserSearchProps> = ({ uid }) => {
               <Image src={userData.background} alt="cover"  width={700}
               height={700} className="w-full h-full object-cover" />
             ) : (
-              <p className="text-gray-500 text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">ფონის სურათი</p>
+              <p className="text-gray-500 text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Cover photo</p>
             )}
           </div>
 

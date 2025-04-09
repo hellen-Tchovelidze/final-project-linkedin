@@ -164,14 +164,15 @@ const ProfilePageComponent: React.FC = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="bg-[#F4F2EE]">
+      <div className="bg-[#F4F2EE] ">
         {uid && <Header uid={uid} />}
 
-        <div className="flex justify-center gap-[3%] items-center">
-          <div className="flex flex-col justify-evenly items-start gap-[3%] mt-[5%] bg-white rounded-lg p-7">
+        <div className="flex justify-center gap-[3%] items-center p-9">
+          <div 
+          className="flex flex-col justify-evenly items-start gap-[3%] mt-[5%] bg-green rounded-lg max-w-[700px] w-full  max-md:mt-20 max-[773px]:w-[300px]">
             {userData ? (
               <>
-                <div className="relative w-[700px] h-[300px] bg-green-400 flex justify-start items-end rounded-lg overflow-hidden">
+                <div className="relative w-[700px] h-[300px] bg-black/10 flex justify-start items-end rounded-lg overflow-hidden">
                   {background && (
                     <Image src={background} alt="background" width={500} height={500} className="absolute w-full h-full object-cover" />
                   )}
@@ -180,7 +181,19 @@ const ProfilePageComponent: React.FC = () => {
                     {avatar ? (
                       <Image src={avatar} alt="avatar"  width={500} height={500} className="w-full h-full object-cover" />
                     ) : (
-                      <p className="text-white text-center">Avatar</p>
+                      <div>
+
+<Image
+                        src={"/avatar.png"}
+                        alt="avatar"
+                        width={700}
+                        height={700}
+                        className='w-full h-full'
+                      />
+                      </div>
+                        
+                    
+                      
                     )}
                     <input type="file" className="hidden" onChange={(e) => handleFileUpload(e, 'avatar')} disabled={mode === 'readonly'} />
                   </div>
@@ -198,34 +211,35 @@ const ProfilePageComponent: React.FC = () => {
                   <h1> {location}</h1>
                 </div>
 
-                <div className='  flex'>
+                <div className='  flex w-[300px] justify-between'>
                   {currentUserId && uid && (
                     <FriendRequestButton currentUserId={currentUserId} targetUserId={uid} />
                   )}
-                  <button className='w-full h-[40px] bg-blue-100 border border-blue-500 rounded-full'>Message</button>
+                  <button className='w-[100px] h-[40px] bg-blue-100 border border-blue-500 rounded-full'>Message</button>
+                  <button className='w-[70px] h-[40px] bg-gray-100 border border-black rounded-full'>More</button>
                 </div>
 
                 <div className="mt-4">
-                  <h1>work expariens</h1>
+                  <h1>Work experience:</h1>
                   {experience.map((exp, i) => <h1 key={i}>{exp}</h1>)}
                 </div>
 
                 <div className="mt-4">
-                  <h1>education:</h1>
+                  <h1>Education:</h1>
                   {education.map((edu, i) => <h1 key={i}>{edu}</h1>)}
                 </div>
 
                 <div className="mt-4">
-                  <h1>skils:</h1>
+                  <h1>skills:</h1>
                   {skills.map((skill, i) => <h1 key={i}>{skill}</h1>)}
                 </div>
               </>
             ) : (
-              <p className="text-gray-500">მომხმარებლის ინფორმაცია ვერ მოიძებნა.</p>
+              <p className="text-gray-500">User information not found..</p>
             )}
           </div>
 
-          <div className="flex flex-col justify-between gap-4 mt-[5%]">
+          <div className="flex flex-col justify-between gap-4 mt-[5%] max-lg:hidden">
             <Defolt />
             <Reclient />
             <FooterOnce />
@@ -233,11 +247,11 @@ const ProfilePageComponent: React.FC = () => {
         </div>
       </div>
     </Suspense>
+    
   );
 };
 
 export default ProfilePageComponent;
-
 
 
 

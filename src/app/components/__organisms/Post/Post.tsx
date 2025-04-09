@@ -105,7 +105,7 @@ export default function PostCard({ post }: Props) {
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
           <Image
-            src={profileImage || ""}
+            src={profileImage || "/avatar.png"}
             alt="Profile"
             width={40}
             height={40}
@@ -115,7 +115,7 @@ export default function PostCard({ post }: Props) {
           <p className="text-xs text-black">@{post.username}</p>
         </div>
         {user?.uid === post.uid && (
-          <button onClick={handleDelete}>
+          <button onClick={handleDelete}  className="transform hover:scale-110 transition-transform duration-300">
             ❌
           </button>
         )}
@@ -131,10 +131,10 @@ export default function PostCard({ post }: Props) {
       />
 
       <div className="flex gap-4 px-4 py-2">
-        <button onClick={handleLike}>
-          👍
+        <button onClick={handleLike} className="transform hover:scale-150 transition-transform duration-300">
+          👍Like
         </button>
-        <button onClick={() => setVisible(true)}>
+        <button onClick={() => setVisible(true)}  className="transform hover:scale-110 transition-transform duration-300">
           💬comment
         </button>
         <button onClick={handleSave} className="ml-auto">
