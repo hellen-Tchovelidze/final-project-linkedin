@@ -158,7 +158,7 @@ import Header from '@/app/components/__organisms/Header/Header';
 import Defolt from '@/app/components/__atoms/defolt/defolt';
 import Reclient from '@/app/components/__atoms/Reclient/Reclient';
 import FooterOnce from '@/app/components/__atoms/FooterOnce/FooterOnce';
-import { useState, useEffect, Suspense } from 'react'; // Add Suspense import
+import { useState, useEffect, Suspense } from 'react'; 
 import { useRouter } from 'next/navigation';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app, db } from "../../../../firebase/firebase-config";
@@ -193,7 +193,7 @@ export default function SuccessPage() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // კლივენტური მხარე
+    setIsClient(true); 
   }, []);
 
   useEffect(() => {

@@ -16,14 +16,15 @@
     "browser-image-compression": "^2.0.2",
     "firebase": "^11.6.0",
     "firebase-admin": "^13.2.0",
-    "next": "^15.2.4",
+    "next": "^15.2.5",
     "next-auth": "^4.24.11",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-firebase-hooks": "^5.1.1",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@types/firebase": "^2.4.32",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -33,5 +34,4 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
-  
 }

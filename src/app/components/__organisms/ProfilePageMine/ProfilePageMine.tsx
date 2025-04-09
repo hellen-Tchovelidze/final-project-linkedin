@@ -35,7 +35,7 @@ interface UserData {
 
 
 
-const ProfilePage: React.FC = () => {
+const ProfilePageMine: React.FC = () => {
   const searchParams = useSearchParams();
   const [uid, setUid] = useState<string | null>(null);
   const [userData, setUserData] = useState<UserData | null>(null);
@@ -391,4 +391,4 @@ const ProfilePage: React.FC = () => {
   );
 };
 
-export default ProfilePage;
+export default ProfilePageMine;

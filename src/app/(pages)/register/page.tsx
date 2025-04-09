@@ -1,6 +1,4 @@
 
-
-
 import RegisterCopmonent from '@/app/components/__organisms/register/register'
 import React from 'react'
 
