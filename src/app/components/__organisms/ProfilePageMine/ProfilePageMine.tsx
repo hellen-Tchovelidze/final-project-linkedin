@@ -171,24 +171,24 @@ const ProfilePageMine: React.FC = () => {
   if (loading) {
     return (
       <div className="flex flex-col justify-center items-center h-screen gap-4 bg-[#F4F2EE]">
-     
+
         <Image
-    src={"/linkdeinicone.png"}
-    alt="Copy Icon"
-    width={700}
-    height={700}
-    className=' max-w-[200px] max-h-[200px]'
-  />
-       <div className="relative w-64 h-2 bg-gray-300 rounded overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-loading-bar"></div>
-  </div>
+          src={"/linkdeinicone.png"}
+          alt="Copy Icon"
+          width={700}
+          height={700}
+          className=' max-w-[200px] max-h-[200px]'
+        />
+        <div className="relative w-64 h-2 bg-gray-300 rounded overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-loading-bar"></div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="bg-[#F4F2EE]">
-     
+
       {uid && <Header uid={uid} />}
       <div className="flex justify-center gap-[3%] items-center max-md:flex-col max-md:p-2 max-md:gap-20">
 
@@ -198,16 +198,18 @@ const ProfilePageMine: React.FC = () => {
 
               <div className="relative w-full h-[300px] bg-black/55 flex justify-start items-end rounded-lg overflow-hidden ">
                 {background ? (
-                  <img
+                  <Image
                     src={background}
                     alt="background"
+                    width={700}
+                    height={700}
                     className="absolute w-full h-full object-cover"
                   />
                 ) : (
                   <p className="text-white text-center"></p>
                 )}
                 <label className="absolute bottom-2 right-2  bg-black/50 text-white px-3 py-1 cursor-pointer  rounded-md ">
-                Upload a cover photo
+                  Upload a cover photo
                   <input
                     type="file"
                     className="hidden"
@@ -217,20 +219,21 @@ const ProfilePageMine: React.FC = () => {
 
                 <div className="relative w-24 h-24 bg-gray-800 rounded-full overflow-hidden ">
                   {avatar ? (
-                    <img src={avatar} alt="avatar" className="w-full h-full object-cover" />
+                    <Image src={avatar} alt="avatar" width={700}
+                      height={700} className="w-full h-full object-cover" />
                   ) : (
                     <div>
                       <Image
-    src={"/avatar.png"}
-    alt="avatar"
-    width={700}
-    height={700}
-    className='w-full h-full'
-  />
+                        src={"/avatar.png"}
+                        alt="avatar"
+                        width={700}
+                        height={700}
+                        className='w-full h-full'
+                      />
                     </div>
                   )}
                   <label className="absolute bottom-0 bg-black/50 w-full  text-center text-white text-sm cursor-pointer py-1">
-                  Upload
+                    Upload
                     <input type="file" className="hidden" onChange={(e) => handleFileUpload(e, 'avatar')} />
                   </label>
                 </div>
@@ -242,49 +245,49 @@ const ProfilePageMine: React.FC = () => {
               <div className=' flex justify-start gap-[2%] p-7'>
 
                 <div className=' flex flex-col'>
-             <div className=' flex max-[400px]:flex-col'>    <div className="mt-4">
-               
-               <input
-                 type="text"
-                 value={firstName}
-                 onChange={(e) => setFirstName(e.target.value)}
-                 className=" p-2 w-full mt-1 text-black "
-               />
-             </div>
-             <div className="mt-4">
-              
-               <input
-                 type="text"
-                 value={lastName}
-                 onChange={(e) => setLastName(e.target.value)}
-                 className=" p-2 w-full mt-1 text-black"
-               />
-             </div></div>
-             <div className="mt-4">
-             
-               <input
-                 type="text"
-                 value={location}
-                 onChange={(e) => setLocation(e.target.value)}
-                 className=" p-2 w-full mt-1 text-gray-700"
-               />
-             </div>
+                  <div className=' flex max-[400px]:flex-col'>    <div className="mt-4">
+
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className=" p-2 w-full mt-1 text-black "
+                    />
+                  </div>
+                    <div className="mt-4">
+
+                      <input
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        className=" p-2 w-full mt-1 text-black"
+                      />
+                    </div></div>
+                  <div className="mt-4">
+
+                    <input
+                      type="text"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className=" p-2 w-full mt-1 text-gray-700"
+                    />
+                  </div>
                 </div>
               </div>
 
 
               <div className="mt-4 p-7 flex-col flex max-w-[700px] w-full">
-              <div className=' flex justify-between items-center max-w-[500px] w-full'>  <label>Experience</label>
-                <button
-                  onClick={handleAddExperience}
-                  className="  p-2 rounded-md text-[40px] flex justify-center items-center mt-[-20px] "
-                >
-                +
-                </button></div>
+                <div className=' flex justify-between items-center max-w-[500px] w-full'>  <label>Experience</label>
+                  <button
+                    onClick={handleAddExperience}
+                    className="  p-2 rounded-md text-[40px] flex justify-center items-center mt-[-20px] "
+                  >
+                    +
+                  </button></div>
                 {experience.map((exp, index) => (
                   <div key={index} className="flex gap-2 mt-2">
                     <textarea
-                     
+
                       value={exp}
                       onChange={(e) =>
                         setExperience((prev) => prev.map((item, i) => (i === index ? e.target.value : item)))
@@ -299,23 +302,23 @@ const ProfilePageMine: React.FC = () => {
                     </button>
                   </div>
                 ))}
-               
+
               </div>
-<div className='h-[1px] w-full bg-[#434242]'></div>
+              <div className='h-[1px] w-full bg-[#434242]'></div>
               <div className="mt-4 p-7 flex-col flex max-w-[700px] w-full">
-              <div className=' flex justify-between items-center max-w-[500px] w-full'>
-              <label>Education</label>
-                <button
-                  onClick={handleAddEducation}
-                  className=" p-2 rounded-md text-[40px] flex justify-center items-center mt-[-20px]"
-                >
-                 +
-                </button>
-              </div>
+                <div className=' flex justify-between items-center max-w-[500px] w-full'>
+                  <label>Education</label>
+                  <button
+                    onClick={handleAddEducation}
+                    className=" p-2 rounded-md text-[40px] flex justify-center items-center mt-[-20px]"
+                  >
+                    +
+                  </button>
+                </div>
                 {education.map((edu, index) => (
                   <div key={index} className="flex gap-2 mt-2">
                     <textarea
-                     
+
                       value={edu}
                       onChange={(e) =>
                         setEducation((prev) => prev.map((item, i) => (i === index ? e.target.value : item)))
@@ -330,24 +333,24 @@ const ProfilePageMine: React.FC = () => {
                     </button>
                   </div>
                 ))}
-               
+
               </div>
 
               <div className='h-[0.5px] w-full bg-[#434242]'></div>
               <div className="mt-4 p-7 flex-col flex max-w-[700px] w-full">
-              <div className=' flex justify-between items-center max-w-[500px] w-full'>
-              <label>Skills</label>
-                <button
-                  onClick={handleAddSkill}
-                  className="p-2 rounded-md text-[40px] flex justify-center items-center mt-[-20px]"
-                >
-                 +
-                </button>
-              </div>
+                <div className=' flex justify-between items-center max-w-[500px] w-full'>
+                  <label>Skills</label>
+                  <button
+                    onClick={handleAddSkill}
+                    className="p-2 rounded-md text-[40px] flex justify-center items-center mt-[-20px]"
+                  >
+                    +
+                  </button>
+                </div>
                 {skills.map((skill, index) => (
                   <div key={index} className="flex gap-2 mt-2">
                     <textarea
-                     
+
                       value={skill}
                       onChange={(e) =>
                         setSkills((prev) => prev.map((item, i) => (i === index ? e.target.value : item)))
@@ -362,14 +365,14 @@ const ProfilePageMine: React.FC = () => {
                     </button>
                   </div>
                 ))}
-               
+
               </div >
               <div className='h-[1px] w-full bg-[#434242]'></div>
               <button
                 onClick={handleUpdate}
                 className="  text-blue-700 border-blue-700 border   rounded-full w-auto p-7 h-14 mb-8 flex justify-center items-center mt-7 ml-5"
               >
-                Update 
+                Update
               </button>
             </>
           ) : (
@@ -379,11 +382,11 @@ const ProfilePageMine: React.FC = () => {
         <div className="flex flex-col justify-between gap-4 mt-[-8%] max-md:w-full">
           {uid && <FriendsList userId={uid} />}
 
-       <div className=' max-md:hidden'>
-       <Defolt />
-          <Reclient />
-          <FooterOnce />
-       </div>
+          <div className=' max-md:hidden'>
+            <Defolt />
+            <Reclient />
+            <FooterOnce />
+          </div>
 
         </div>
       </div>

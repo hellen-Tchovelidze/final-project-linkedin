@@ -173,12 +173,12 @@ const ProfilePageComponent: React.FC = () => {
               <>
                 <div className="relative w-[700px] h-[300px] bg-green-400 flex justify-start items-end rounded-lg overflow-hidden">
                   {background && (
-                    <img src={background} alt="background" className="absolute w-full h-full object-cover" />
+                    <Image src={background} alt="background" width={500} height={500} className="absolute w-full h-full object-cover" />
                   )}
                   <input type="file" className="hidden" onChange={(e) => handleFileUpload(e, 'background')} disabled={mode === 'readonly'} />
                   <div className="relative w-24 h-24 bg-gray-800 rounded-full overflow-hidden">
                     {avatar ? (
-                      <img src={avatar} alt="avatar" className="w-full h-full object-cover" />
+                      <Image src={avatar} alt="avatar"  width={500} height={500} className="w-full h-full object-cover" />
                     ) : (
                       <p className="text-white text-center">Avatar</p>
                     )}
@@ -206,17 +206,17 @@ const ProfilePageComponent: React.FC = () => {
                 </div>
 
                 <div className="mt-4">
-                  <h1>სამუშაო გამოცდილება:</h1>
+                  <h1>work expariens</h1>
                   {experience.map((exp, i) => <h1 key={i}>{exp}</h1>)}
                 </div>
 
                 <div className="mt-4">
-                  <h1>განათლება:</h1>
+                  <h1>education:</h1>
                   {education.map((edu, i) => <h1 key={i}>{edu}</h1>)}
                 </div>
 
                 <div className="mt-4">
-                  <h1>უნარები:</h1>
+                  <h1>skils:</h1>
                   {skills.map((skill, i) => <h1 key={i}>{skill}</h1>)}
                 </div>
               </>

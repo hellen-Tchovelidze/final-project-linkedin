@@ -10,6 +10,8 @@ import SearchUsers from '../../__moleculos/SerchUsers/SerchUsers';
 import NotificationItem from '../../__moleculos/NotificationItem/NotificationItem'; 
 import HeaderDefoltComponent from '../../__atoms/HeaderDefoltComponent/HeaderDefoltComponent';
 import { getAuth } from 'firebase/auth';
+import Image from 'next/image'; 
+
 interface UserData {
   firstName: string;
   lastName: string;
@@ -48,7 +50,7 @@ const Header: React.FC<UserSearchProps> = ({ uid }) => {
   const Avatar: React.FC<{ src?: string; alt?: string; size?: string }> = ({ src, alt = "Avatar", size = "w-24 h-24" }) => (
     <div className={`relative ${size} border-4 border-white rounded-full overflow-hidden`}>
       {src ? (
-        <img src={src} alt={alt} className="w-full h-full object-cover" />
+        <Image src={src} alt={alt} width={500} height={500} className="w-full h-full object-cover" />
       ) : (
         <p className="text-gray-500 text-sm text-center">{alt}</p>
       )}

@@ -83,14 +83,24 @@ const AuthComponent = () => {
       </div>
 
 
-      <div className="mb-4 text-center">
+      {/* <div className="mb-4 text-center">
         <p className="text-sm text-gray-500">
           By clicking "Continue to join or sign in", you agree to LinkedIn’s{' '}
           <a href="#" className="text-blue-600">User Agreement</a>,{' '}
           <a href="#" className="text-blue-600">Privacy Policy</a>, and{' '}
           <a href="#" className="text-blue-600">Cookie Policy</a>.
         </p>
-      </div>
+      </div> */}
+
+<div className="mb-4 text-center">
+  <p className="text-sm text-gray-500">
+    By clicking &quot;Continue to join or sign in&quot;, you agree to LinkedIn’s{' '}
+    <a href="#" className="text-blue-600">User Agreement</a>,{' '}
+    <a href="#" className="text-blue-600">Privacy Policy</a>, and{' '}
+    <a href="#" className="text-blue-600">Cookie Policy</a>.
+  </p>
+</div>
+
 
 
       <div className="mt-6  flex gap-2 justify-center items-center">

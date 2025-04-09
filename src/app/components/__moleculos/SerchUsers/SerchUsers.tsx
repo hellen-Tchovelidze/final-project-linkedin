@@ -8,6 +8,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { getUsersByName } from '../../../../firebase/auth';
+import Image from 'next/image';
 
 const SearchUsers = () => {
   const [name, setName] = useState('');
@@ -83,9 +84,10 @@ const SearchUsers = () => {
                   className="flex items-center gap-4 p-3 rounded-md hover:bg-gray-100 cursor-pointer transition"
                   onClick={() => handleUserSelect(user.uid)}
                 >
-                  <img
+                  <Image
                     src={user.photoURL || '/avatar.png'}
                     alt={`${user.firstName} ${user.lastName}`}
+                    width={500} height={500}
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div className="min-w-0">

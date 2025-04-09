@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { db } from '@/firebase/firebase-config';
+import Image from 'next/image';
 
 type User = {
   id: string;
@@ -62,7 +63,7 @@ const FriendsList = ({ userId }: { userId: string }) => {
           {friends.map((friend) => (
             <li key={friend.id} className="flex items-center gap-2">
               {friend.avatar ? (
-                <img src={friend.avatar} alt="avatar" className="w-8 h-8 rounded-full object-cover" />
+                <Image  src={friend.avatar} alt="avatar"  width={500} height={500} className="w-8 h-8 rounded-full object-cover" />
               ) : (
                 <div className="w-8 h-8 rounded-full bg-gray-300" />
               )}

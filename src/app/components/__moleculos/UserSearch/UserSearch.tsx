@@ -71,7 +71,8 @@ const UserSearch: React.FC<UserSearchProps> = ({ uid }) => {
          
           <div className="w-full h-24 bg-gray-200 relative rounded-t-lg overflow-hidden">
             {userData.background ? (
-              <img src={userData.background} alt="cover" className="w-full h-full object-cover" />
+              <Image src={userData.background} alt="cover"  width={700}
+              height={700} className="w-full h-full object-cover" />
             ) : (
               <p className="text-gray-500 text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">ფონის სურათი</p>
             )}
@@ -80,7 +81,8 @@ const UserSearch: React.FC<UserSearchProps> = ({ uid }) => {
           
           <div className="relative w-24 h-24 mx-auto -mt-12 border-4 border-white rounded-full overflow-hidden">
             {userData.avatar ? (
-              <img src={userData.avatar} alt="avatar" className="w-full h-full object-cover" />
+              < Image src={userData.avatar} alt="avatar" width={700}
+              height={700} className="w-full h-full object-cover" />
             ) : (
              <div>
                              <Image
