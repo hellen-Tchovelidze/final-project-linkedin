@@ -11,6 +11,7 @@ import NotificationItem from '../../__moleculos/NotificationItem/NotificationIte
 import HeaderDefoltComponent from '../../__atoms/HeaderDefoltComponent/HeaderDefoltComponent';
 import { getAuth } from 'firebase/auth';
 import Image from 'next/image'; 
+import NotificationsList from '../../__moleculos/NotificationsList/NotificationsList';
 
 interface UserData {
   firstName: string;
@@ -120,6 +121,7 @@ const Header: React.FC<UserSearchProps> = ({ uid }) => {
 
   const toggleNotifications = () => {
     setNotificationsVisible(!notificationsVisible);
+    console.log('toggleNotifications clicked');
   };
 
 
@@ -199,11 +201,17 @@ const Header: React.FC<UserSearchProps> = ({ uid }) => {
                     notification={notification}
                     currentUserId={uid}
                   />
+
+                  
                 ))
+                
+
               )}
             </div>
           )}
         </div>
+
+
 
        
         <div>
